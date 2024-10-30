@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs Dashboard and 3D Scene</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+
+
+</head>
+<body>
+<div id="toggleDashboard1"></div>
+
+
+ <!-- Menu Button -->
+ <div id="menuContainer">
+    <div id="menuBar">
+      <a onclick="toggleDashboard1()">Data_Alarm  </a>
+      <a >||</a>
+      <a >  Data_Input</a>
+    </div>
+  </div>
+
+
+
+
+<div class="container">
+    <div class="dashboard-section">
+        <h3>Inputs Dashboard</h3>
+        <div id="dashboard" class="dashboard"></div>
+    </div>
+    
+    <div id="infoBox-1">
+        <h3>Details</h3>
+        <table id="infoTable">
+            <tr><th>Attribute</th><th>Value</th></tr>
+        </table>
+    </div>
+
+    <!-- 3D Scene container -->
+    <div id="3d-container"></div>
+</div>
+<div id="dashboard1" class="dashboard1"></div>
+
+
+
+
+
+<!-- Modal for Details -->
+<div id="detailsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeDetails()">&times;</span>
+      <!-- Canvas for Chart -->
+      <canvas id="lineChart"></canvas>
+      <h2 id="modalTitle"></h2>
+      <!-- Table for Details -->
+      <table id="detailsTable">
+        <thead>
+          <tr>
+            <th>ประเภท</th>
+            <!-- <th>Input ID</th> -->
+            <th>วันที่</th>
+            <th>เวลาเริ่ม</th>
+            <th>เวลาสิ้นสุด</th>
+            <th>ใช้เวลาไป</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data will be inserted here dynamically -->
+        </tbody>
+      </table>
+    </div>
+</div>
+<!-- <button id="toggleDashboard">Toggle Dashboard</button> -->
+<script>
+    function toggleDashboard1() {
+        const dashboard1 = document.getElementById("dashboard1");
+        if (dashboard1.style.display === "none" || dashboard1.style.display === "") {
+            dashboard1.style.display = "block";
+        } else {
+            dashboard1.style.display = "none";
+        }
+    }
+</script>
+
+<script src="chart.js?v=1.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js?v=1.0"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FBXLoader.js"></script>
+<script src="script3.js?v=1.0"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+/* Body Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #0d0f1b; /* สีพื้นหลังเข้ม */
+    color: #ffffff;
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Dashboard Section */
+.dashboard-section {
+    width: 300px;
+    margin-right: 20px;
+}
+
+.dashboard-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00d1ff; /* สีฟ้าเรืองแสง */
+    text-shadow: 0 0 10px rgba(0, 209, 255, 0.5);
+}
+
+/* Dashboard */
+.dashboard {
+    background-color: #1b1e27; /* สีพื้นหลังของการ์ด */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* Dashboard Item */
+.dashboard-item {
+    background-color: rgba(20, 25, 50, 0.8); /* สีพื้นหลังของการ์ด */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    color: #00d1ff; /* สีฟ้าเรืองแสง */
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 209, 255, 0.4), inset 0 0 8px rgba(0, 209, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 209, 255, 0.6), inset 0 0 10px rgba(0, 209, 255, 0.3);
+}
+
+.dashboard-item.active {
+    background-color: #0288d1;
+    /* color: #fff; */
+    /* color: #1b1e27; */
+}
+
+/* Info Box */
+#infoBox-1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.877);
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 209, 255, 0.3);
+    display: none;
+    z-index: 9999;
+    width: 80%;
+    max-width: 400px;
+    transition: transform 0.3s ease;
+    color: #00d1ff;
+    text-shadow: 0 0 8px rgba(0, 209, 255, 0.5);
+}
+
+#infoBox-1 h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px;
+}
+
+th {
+    background-color: #0288d1;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgba(0, 209, 255, 0.3);
+}
+
+td {
+    text-align: center;
+    /* color: #1b1e27; */
+    color: #00d1ff; /* สีฟ้าเรืองแสง */
+}
+
+/*กรอบ 3D  เครื่องฉีด*/   
+#3d-container {
+    flex: 1;
+    height: 70vh;
+    background-color: #0d0f1b;
+}
+
+/* Mobile Dashboard */
+@media (max-width: 600px) {
+    .dashboard-section {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #1b1e27;
+        z-index: 1000;
+        height: 100%;
+        width: 100%;
+        padding-top: 60px;
+    }
+
+    .dashboard-section.active {
+        display: block;
+    }
+
+    #toggleDashboard {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #00d1ff; 
+        padding: 15px;
+        border-radius: 50%;
+        z-index: 1001;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 209, 255, 0.3);
+        font-size: 24px;
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    /* ปรับขนาดปุ่มและฟอนต์ใน #menuContainer */
+    #menuContainer {
+        top: 10px; /* ลดระยะห่างจากด้านบน */
+        padding: 10px;
+        font-size: 18px; /* ปรับขนาดฟอนต์ให้เหมาะสม */
+        width: 90%; /* ลดขนาดให้เล็กลง */
+    }
+
+    #menuContainer a {
+        margin: 0 10px; /* ลดระยะห่างระหว่างลิงก์ */
+    }
+
+    /* ปรับ .dashboard1 ให้แสดงเต็มหน้าจอบน iPad */
+    .dashboard1 {
+        width: 95vw; /* ใช้พื้นที่ 95% ของความกว้างหน้าจอ */
+        height: 90vh; /* ใช้พื้นที่ 90% ของความสูงหน้าจอ */
+        padding: 15px; /* เพิ่มระยะห่างขอบภายใน */
+    }
+
+    .dashboard1 #dashboard1 {
+        grid-template-columns: repeat(1, 1fr); /* แสดงการ์ดในคอลัมน์เดียว */
+        gap: 15px; /* ลดระยะห่างระหว่างการ์ด */
+    }
+
+    /* ปรับสไตล์ปุ่มใน .dashboard1 */
+    .dashboard1 .card {
+        font-size: 16px; /* ลดขนาดฟอนต์ */
+        padding: 10px; /* ลดระยะ padding ภายในการ์ด */
+    }
+
+    /* ปรับปุ่มปิด overlay */
+    .close-overlay {
+        font-size: 20px; /* ลดขนาดปุ่มปิด */
+        margin-top: -20px; /* เลื่อนปุ่มขึ้นให้ชิดด้านบน */
+    }
+}
